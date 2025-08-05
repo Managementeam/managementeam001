@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Fan Card | Meet and Greet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="empty-header">
+    <div class="logo"></div>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#testimonials">Testimonial</a></li>
+    </ul>
+  </div>
+
+  <section class="card-wrapper">
+    <div class="fan-card">
+      <img src="/WhatsApp Image 2025-08-03 at 1.50.02 AM.jpeg" alt="Fan Card" class="fan-card-img" />
+      <div class="fan-card-body">
+        <h2>$200 Fan Card</h2>
+        <p>Become the ultimate fan and receive a personalized card from your favorite celebrity!</p>
+        <a href="#" class="cta-button" id="openFanModal">Get the Fan Card Now</a>
+      </div>
+    </div>
+    <div class="fan-card">
+      <img src="/WhatsApp Image 2025-08-03 at 1.49.17 AM.jpeg" alt="Meet and Greet" class="fan-card-img" />
+      <div class="fan-card-body">
+        <h2>$500 Meet & Greet</h2>
+        <p>Exclusive access to meet and greet your celebrity! Limited slots available.</p>
+        <a href="#" class="cta-button" id="openMeetModal">Book Meet & Greet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- $200 Fan Card Modal -->
+  <div class="form-modal" id="fanModal">
+    <div class="form-container">
+      <div class="close-btn" id="closeFanModal">&times;</div>
+      <h2>Get Your Fan Card - $200</h2>
+      <!-- Fillout Embed -->
+      <div style="width:100%;height:500px;" data-fillout-id="qijn347pqqus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+    </div>
+  </div>
+
+  <!-- $500 Meet & Greet Modal -->
+  <div class="form-modal" id="meetModal">
+    <div class="form-container">
+      <div class="close-btn" id="closeMeetModal">&times;</div>
+      <h2>Book Meet & Greet - $500</h2>
+      <!-- Fillout Embed -->
+      <div style="width:100%;height:500px;" data-fillout-id="qijn347pqqus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+  <h1 class="fan-shout">Fans ShoutOut</h1>
+  <div class="scrolling-wrapper">
+    <div class="testimonial">
+      <div class="head-img1"></div>
+      <p>"This fan card made me feel like royalty!<br>Best gift I’ve ever given myself."</p>
+      <strong>– Vanessa</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img2"></div>
+      <p>"I got a personal video message and it brought tears to my eyes!<br>Absolutely magical."</p>
+      <strong>– Jude</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img3"></div>
+      <p>"The meet and greet was unforgettable.<br>Dreams do come true!"</p>
+      <strong>– Amara</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img4"></div>
+      <p>"Holding the fan card felt like holding a piece of my idol’s heart.<br>I’ll cherish it forever."</p>
+      <strong>– Henry</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img5"></div>
+      <p>"I showed my friends and they were blown away!<br>This is next level fandom!"</p>
+      <strong>– Tasha</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img1"></div>
+      <p>"Every time I look at my fan card, I smile.<br>It's like being part of something special."</p>
+      <strong>– Collins</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img2"></div>
+      <p>"Meeting my favorite celebrity felt like a dream.<br>I’m still speechless!"</p>
+      <strong>– Joy</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img3"></div>
+      <p>"I got a signed gift too!<br>This is worth every penny."</p>
+      <strong>– Kenny</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img4"></div>
+      <p>"The whole experience felt like VIP treatment.<br>Five stars!"</p>
+      <strong>– Blessing</strong>
+    </div>
+    <div class="testimonial">
+      <div class="head-img5"></div>
+      <p>"It’s more than a card—it’s a connection!<br>So grateful for this opportunity."</p>
+      <strong>– Michael</strong>
+    </div>
+  </div>
+</section>
+
+
+  <footer><p>Become the Ultimate Fan!</p></footer>
+
+  <!-- Fillout Embed Script -->
+  <script src="https://server.fillout.com/embed/v1/"></script>
+
+  <script>
+    // Modal controls
+    const fanModal = document.getElementById('fanModal');
+    const meetModal = document.getElementById('meetModal');
+    document.getElementById('openFanModal').onclick = e => {
+      e.preventDefault();
+      if (confirm("Are you ready to get your Fan Card?")) fanModal.style.display = 'flex';
+    };
+    document.getElementById('openMeetModal').onclick = e => {
+      e.preventDefault();
+      if (confirm("Are you ready to book your Meet & Greet?")) meetModal.style.display = 'flex';
+    };
+    document.getElementById('closeFanModal').onclick = () => fanModal.style.display = 'none';
+    document.getElementById('closeMeetModal').onclick = () => meetModal.style.display = 'none';
+    window.onclick = event => {
+      if (event.target === fanModal) fanModal.style.display = 'none';
+      if (event.target === meetModal) meetModal.style.display = 'none';
+    };
+
+    // Auto-scroll testimonials
+    const wrapper = document.querySelector('.scrolling-wrapper');
+    wrapper.innerHTML += wrapper.innerHTML;
+    let scrollAmount = 0;
+    function autoScroll() {
+      scrollAmount += 1;
+      wrapper.scrollLeft = scrollAmount;
+      if (scrollAmount >= wrapper.scrollWidth / 2) scrollAmount = 0;
+      requestAnimationFrame(autoScroll);
+    }
+    autoScroll();
+  </script>
+</body>
+</html>

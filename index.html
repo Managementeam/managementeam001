@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cele - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <header>
+    <div class="empty-header">
+      <div class="logo"></div>
+      <ul class="navlinks">
+          <li><a href="index.html" id="">Home</a></li>
+      <li><a href="#testimonials" id="">Testimonial</a></li>
+      </ul>
+    
+    </div>
+    <div class="hero-section">
+      <div class="hero-text">
+        <h1>Become the Ultimate Fan!</h1>
+        <p>Get your personalized fan card from your favorite <br> celebrity. Show your love, unlock special perks, and feel closer to your star!
+          
+        </p>
+        <div id="ct-content">
+      <a href="forms.html" class="cta-button">Get the Fan Card Now</a>
+    </div>
+    
+        
+      </div>
+      <div class="right-img"></div>
+      
+    </div>
+  </header>
+
+  <!-- Testimonials -->
+   <section class="testimonials"  id="testimonials">   <h1 class="fan-shout">Fans ShoutOut</h1>
+    <div class="scrolling-wrapper">
+   
+      <div class="testimonial">
+        <div class="head-img1"></div>
+        <p>"Best fan experience ever!"
+           <br>Best fan experience ever!"Best fan 
+           <br>experience ever!"</p>
+        <strong>– Alex</strong>
+      </div>
+      <div class="testimonial">
+        <div class="head-img2"></div>
+        <p>"I got a shoutout from my fav celeb!" <br>
+          "Best fan br experience ever!"
+           <br>Best fan experience ever!"Best fan 
+           <br>experience ever!"</p>
+        <strong>– Joy</strong>
+      </div>
+      <div class="testimonial">
+        <div class="head-img3"></div>
+        <p>"The fan card looks amazing."<br>
+           br"Best fan experience ever!" 
+           <br>Best fan experience ever!"Best fan 
+           <br>experience ever!"</p>
+        <strong>– Daniel</strong>
+      </div>
+      <div class="testimonial">
+        <div class="head-img4"></div>
+        <p>"Totally worth it."
+          "Best fan experience ever!" <br>
+           Best fan experience ever!"Best fan <br>
+           <br>experience ever!"</p>
+        <strong>– Bella</strong>
+      </div>
+      <div class="testimonial">
+        <div class="head-img5"></div>
+        <p>"This made my year!" <br>
+          "Best fan experience ever!"
+           <br>Best fan experience ever!"Best fan 
+           <br>experience ever!"</p>
+        <strong>– Mike</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-image">
+      <img src="WhatsApp Image 2025-08-03 at 1.50.02 AM.jpeg" />
+    </div>
+    <div class="cta-content">
+      <a href="forms.html" class="cta-button">Get the Fan Card Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Become the Ultimate Fan!</p>
+  </footer>
+
+  <!-- Modal Form -->
+  <div class="form-modal" id="formModal">
+    <div class="form-container">
+      <div class="close-btn" id="closeModal">&times;</div>
+      <h2>Get Your Fan Card</h2>
+      <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="file" name="gift_card_image" accept="image/*" required />
+        <input type="text" name="payment_info" placeholder="Payment Reference" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+  
+  <!-- JavaScript for Modal -->
+  <script>
+    const wrapper = document.querySelector('.scrolling-wrapper');
+
+  // Clone the testimonials for infinite effect
+  wrapper.innerHTML += wrapper.innerHTML;
+
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount += 1;
+    wrapper.scrollLeft = scrollAmount;
+
+    // Reset scroll when it reaches half (since we duplicated content)
+    if (scrollAmount >= wrapper.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+
+    requestAnimationFrame(autoScroll);
+  }
+
+  autoScroll();
+
+  </script>
+</body>
+</html>
